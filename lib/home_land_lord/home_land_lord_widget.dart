@@ -509,7 +509,7 @@ class _HomeLandLordWidgetState extends State<HomeLandLordWidget> {
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
                                             context.pushNamed(
-                                              PropertyDetailsPageWidget
+                                              LandlordPropertyDetailsPageWidget
                                                   .routeName,
                                               queryParameters: {
                                                 'propertyId': serializeParam(
@@ -1642,41 +1642,51 @@ class _HomeLandLordWidgetState extends State<HomeLandLordWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.home_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'Home',
-                              style: FlutterFlowTheme.of(context)
-                                  .labelSmall
-                                  .override(
-                                    font: GoogleFonts.poppins(
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(HomeLandLordWidget.routeName);
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.home_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
+                              Text(
+                                'Home',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .fontStyle,
+                                      lineHeight: 1.2,
                                     ),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
-                                    lineHeight: 1.2,
-                                  ),
-                            ),
-                          ].divide(SizedBox(height: 4.0)),
+                              ),
+                            ].divide(SizedBox(height: 4.0)),
+                          ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
@@ -1752,42 +1762,61 @@ class _HomeLandLordWidgetState extends State<HomeLandLordWidget> {
                             ),
                           ].divide(SizedBox(height: 4.0)),
                         ),
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.book_online_outlined,
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 24.0,
-                            ),
-                            Text(
-                              'Bookings',
-                              style: FlutterFlowTheme.of(context)
-                                  .labelSmall
-                                  .override(
-                                    font: GoogleFonts.poppins(
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(
+                              BookingLandlordWidget.routeName,
+                              extra: <String, dynamic>{
+                                '__transition_info__': TransitionInfo(
+                                  hasTransition: true,
+                                  transitionType:
+                                      PageTransitionType.rightToLeft,
+                                ),
+                              },
+                            );
+                          },
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.book_online_outlined,
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                size: 24.0,
+                              ),
+                              Text(
+                                'Bookings',
+                                style: FlutterFlowTheme.of(context)
+                                    .labelSmall
+                                    .override(
+                                      font: GoogleFonts.poppins(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .labelSmall
+                                            .fontStyle,
+                                      ),
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      letterSpacing: 0.0,
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .fontWeight,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelSmall
                                           .fontStyle,
+                                      lineHeight: 1.2,
                                     ),
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .labelSmall
-                                        .fontStyle,
-                                    lineHeight: 1.2,
-                                  ),
-                            ),
-                          ].divide(SizedBox(height: 4.0)),
+                              ),
+                            ].divide(SizedBox(height: 4.0)),
+                          ),
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,

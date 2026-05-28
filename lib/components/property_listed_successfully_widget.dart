@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'property_listed_successfully_model.dart';
@@ -124,21 +125,30 @@ class _PropertyListedSuccessfullyWidgetState
                 borderRadius: BorderRadius.circular(24.0),
               ),
             ),
-            Text(
-              'Back to Dashboard',
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    font: GoogleFonts.inter(
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                context.goNamed(HomeLandLordWidget.routeName);
+              },
+              child: Text(
+                'Back to Dashboard',
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      font: GoogleFonts.inter(
+                        fontWeight: FontWeight.bold,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                      ),
+                      color: FlutterFlowTheme.of(context).primary,
+                      fontSize: 18.0,
+                      letterSpacing: 0.0,
                       fontWeight: FontWeight.bold,
                       fontStyle:
                           FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                     ),
-                    color: FlutterFlowTheme.of(context).primary,
-                    fontSize: 18.0,
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.bold,
-                    fontStyle:
-                        FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                  ),
+              ),
             ),
           ].divide(SizedBox(height: 10.0)),
         ),

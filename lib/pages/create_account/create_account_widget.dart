@@ -1160,10 +1160,15 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           ),
                                           alignment:
                                               AlignmentDirectional(0.0, 0.0),
-                                          child: FaIcon(
-                                            FontAwesomeIcons.google,
-                                            color: Color(0xFFCA0A25),
-                                            size: 24.0,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                            child: Image.network(
+                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/250px-Google_Favicon_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
+                                              width: 24.0,
+                                              height: 24.0,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                         Container(

@@ -161,4 +161,10 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInNewPropertyPhotos(int index, String value) {
     newPropertyPhotos.insert(index, value);
   }
+
+  String _newInspectionDate = '';
+  String get newInspectionDate => _newInspectionDate;
+  set newInspectionDate(String value) {
+    _newInspectionDate = value;
+  }
 }

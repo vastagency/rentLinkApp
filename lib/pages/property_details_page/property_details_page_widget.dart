@@ -93,68 +93,69 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Container(
-                        width: double.infinity,
-                        height: 294.0,
-                        decoration: BoxDecoration(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: Image.network(
-                              valueOrDefault<String>(
-                                propertyDetailsPagePropertiesRow
-                                    ?.photos.firstOrNull,
-                                'https://dimg.dreamflow.cloud/v1/image/modern%20living%20room%20with%20grey%20sofa%20and%20wood%20coffee%20table',
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed(
+                            FullImagePreviewWidget.routeName,
+                            queryParameters: {
+                              'photos': serializeParam(
+                                propertyDetailsPagePropertiesRow?.photos,
+                                ParamType.String,
+                                isList: true,
                               ),
-                            ).image,
+                              'currentIndex': serializeParam(
+                                0,
+                                ParamType.int,
+                              ),
+                            }.withoutNulls,
+                          );
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 294.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: Image.network(
+                                valueOrDefault<String>(
+                                  propertyDetailsPagePropertiesRow
+                                      ?.photos.firstOrNull,
+                                  'https://dimg.dreamflow.cloud/v1/image/modern%20living%20room%20with%20grey%20sofa%20and%20wood%20coffee%20table',
+                                ),
+                              ).image,
+                            ),
+                            borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(16.0),
+                              bottomRight: Radius.circular(16.0),
+                            ),
                           ),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(16.0),
-                            bottomRight: Radius.circular(16.0),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              24.0, 44.0, 24.0, 16.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.safePop();
-                                    },
-                                    child: Container(
-                                      width: 40.0,
-                                      height: 40.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      alignment: AlignmentDirectional(0.0, 0.0),
-                                      child: Icon(
-                                        Icons.chevron_left_sharp,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                    ),
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                24.0, 44.0, 24.0, 16.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.safePop();
+                                      },
+                                      child: Container(
                                         width: 40.0,
                                         height: 40.0,
                                         decoration: BoxDecoration(
@@ -164,193 +165,229 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                                         ),
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),
-                                        child: Stack(
-                                          children: [
-                                            if (_model.isSaved == false)
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  await SavedPropertiesTable()
-                                                      .insert({
-                                                    'tenant_id': currentUserUid,
-                                                    'property_id':
-                                                        widget.propertyId,
-                                                  });
-                                                  _model.isSaved = true;
-                                                  safeSetState(() {});
-                                                },
-                                                child: Icon(
-                                                  Icons.favorite_border,
-                                                  color: Color(0xFF59779E),
-                                                  size: 24.0,
-                                                ),
-                                              ),
-                                            if (_model.isSaved == true)
-                                              InkWell(
-                                                splashColor: Colors.transparent,
-                                                focusColor: Colors.transparent,
-                                                hoverColor: Colors.transparent,
-                                                highlightColor:
-                                                    Colors.transparent,
-                                                onTap: () async {
-                                                  await SavedPropertiesTable()
-                                                      .delete(
-                                                    matchingRows: (rows) => rows
-                                                        .eqOrNull(
-                                                          'tenant_id',
-                                                          currentUserUid,
-                                                        )
-                                                        .eqOrNull(
-                                                          'property_id',
-                                                          widget.propertyId,
-                                                        ),
-                                                  );
-                                                  _model.isSaved = false;
-                                                  safeSetState(() {});
-                                                },
-                                                child: Icon(
-                                                  Icons.favorite,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 24.0,
-                                                ),
-                                              ),
-                                          ],
+                                        child: Icon(
+                                          Icons.chevron_left_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
                                         ),
                                       ),
-                                      Builder(
-                                        builder: (context) => InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await Share.share(
-                                              widget.propertyId!,
-                                              sharePositionOrigin:
-                                                  getWidgetBoundingBox(context),
-                                            );
-                                          },
-                                          child: Container(
-                                            width: 40.0,
-                                            height: 40.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                              shape: BoxShape.circle,
-                                            ),
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Icon(
-                                              Icons.share_outlined,
-                                              color: Color(0xFF9099AB),
-                                              size: 24.0,
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Container(
+                                          width: 40.0,
+                                          height: 40.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Stack(
+                                            children: [
+                                              if (_model.isSaved == false)
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await SavedPropertiesTable()
+                                                        .insert({
+                                                      'tenant_id':
+                                                          currentUserUid,
+                                                      'property_id':
+                                                          widget.propertyId,
+                                                    });
+                                                    _model.isSaved = true;
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.favorite_border,
+                                                    color: Color(0xFF59779E),
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                              if (_model.isSaved == true)
+                                                InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    await SavedPropertiesTable()
+                                                        .delete(
+                                                      matchingRows: (rows) =>
+                                                          rows
+                                                              .eqOrNull(
+                                                                'tenant_id',
+                                                                currentUserUid,
+                                                              )
+                                                              .eqOrNull(
+                                                                'property_id',
+                                                                widget
+                                                                    .propertyId,
+                                                              ),
+                                                    );
+                                                    _model.isSaved = false;
+                                                    safeSetState(() {});
+                                                  },
+                                                  child: Icon(
+                                                    Icons.favorite,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 24.0,
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ),
+                                        Builder(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await Share.share(
+                                                widget.propertyId!,
+                                                sharePositionOrigin:
+                                                    getWidgetBoundingBox(
+                                                        context),
+                                              );
+                                            },
+                                            child: Container(
+                                              width: 40.0,
+                                              height: 40.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                shape: BoxShape.circle,
+                                              ),
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Icon(
+                                                Icons.share_outlined,
+                                                color: Color(0xFF9099AB),
+                                                size: 24.0,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                    ].divide(SizedBox(width: 8.0)),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Container(
-                                    width: 66.0,
-                                    height: 31.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xA334302A),
-                                      borderRadius: BorderRadius.circular(24.0),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          '1/8',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 169.0,
-                                    height: 31.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xA334302A),
-                                      borderRadius: BorderRadius.circular(24.0),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.image_outlined,
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          size: 24.0,
-                                        ),
-                                        Text(
-                                          'View all photos',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                font: GoogleFonts.inter(
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMedium
-                                                          .fontStyle,
-                                                ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                        ),
                                       ].divide(SizedBox(width: 8.0)),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      width: 66.0,
+                                      height: 31.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xA334302A),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            '1/8',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 169.0,
+                                      height: 31.0,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xA334302A),
+                                        borderRadius:
+                                            BorderRadius.circular(24.0),
+                                      ),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Icon(
+                                            Icons.image_outlined,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            size: 24.0,
+                                          ),
+                                          Text(
+                                            'View all photos',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                        ].divide(SizedBox(width: 8.0)),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -384,17 +421,42 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                                           final photoThumbnailsItem =
                                               photoThumbnails[
                                                   photoThumbnailsIndex];
-                                          return ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            child: Image.network(
-                                              valueOrDefault<String>(
-                                                '${photoThumbnailsItem}',
-                                                'https://images.unsplash.com/photo-1554995207-c18c203602cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8bGl2aW5nJTIwcm9vbXxlbnwwfHx8fDE3NzgzNDc1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                                          return InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              context.pushNamed(
+                                                FullImagePreviewWidget
+                                                    .routeName,
+                                                queryParameters: {
+                                                  'photos': serializeParam(
+                                                    propertyDetailsPagePropertiesRow
+                                                        ?.photos,
+                                                    ParamType.String,
+                                                    isList: true,
+                                                  ),
+                                                  'currentIndex':
+                                                      serializeParam(
+                                                    photoThumbnailsIndex,
+                                                    ParamType.int,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                              child: Image.network(
+                                                valueOrDefault<String>(
+                                                  '${photoThumbnailsItem}',
+                                                  'https://images.unsplash.com/photo-1554995207-c18c203602cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8bGl2aW5nJTIwcm9vbXxlbnwwfHx8fDE3NzgzNDc1MDF8MA&ixlib=rb-4.1.0&q=80&w=1080',
+                                                ),
+                                                width: 100.0,
+                                                height: 80.0,
+                                                fit: BoxFit.cover,
                                               ),
-                                              width: 100.0,
-                                              height: 80.0,
-                                              fit: BoxFit.cover,
                                             ),
                                           );
                                         }).divide(SizedBox(width: 8.0)),
@@ -1117,10 +1179,10 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                                         final amenitiesItem =
                                             amenities[amenitiesIndex];
                                         return Container(
-                                          width: 114.0,
+                                          width: 112.0,
                                           height: 36.0,
                                           child: custom_widgets.AmenityPill(
-                                            width: 114.0,
+                                            width: 112.0,
                                             height: 36.0,
                                             amenityName: '${amenitiesItem}',
                                           ),

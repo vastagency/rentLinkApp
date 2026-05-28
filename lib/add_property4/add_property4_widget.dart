@@ -421,46 +421,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity2Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue2 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue2 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue2 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue2 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -548,46 +551,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity3Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue3 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue3 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue3 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue3 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -675,46 +681,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity4Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue4 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue4 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue4 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue4 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -816,46 +825,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           ),
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity5Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue5 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue5 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue5 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue5 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -957,46 +969,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           ),
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity6Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue6 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue6 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue6 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue6 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -1098,46 +1113,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           ),
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity7Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue7 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue7 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue7 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue7 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),
@@ -1239,46 +1257,49 @@ class _AddProperty4WidgetState extends State<AddProperty4Widget> {
                                           ),
                                         ),
                                       ),
-                                      Theme(
-                                        data: ThemeData(
-                                          checkboxTheme: CheckboxThemeData(
-                                            visualDensity:
-                                                VisualDensity.compact,
-                                            materialTapTargetSize:
-                                                MaterialTapTargetSize
-                                                    .shrinkWrap,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
+                                      if (_model.amenity8Selected)
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(24.0),
+                                              ),
                                             ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
                                           ),
-                                          unselectedWidgetColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .alternate,
+                                          child: Checkbox(
+                                            value: _model.checkboxValue8 ??=
+                                                true,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue8 = newValue!);
+                                            },
+                                            side: (FlutterFlowTheme.of(context)
+                                                        .alternate !=
+                                                    null)
+                                                ? BorderSide(
+                                                    width: 2,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                  )
+                                                : null,
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                          ),
                                         ),
-                                        child: Checkbox(
-                                          value: _model.checkboxValue8 ??= true,
-                                          onChanged: (newValue) async {
-                                            safeSetState(() => _model
-                                                .checkboxValue8 = newValue!);
-                                          },
-                                          side: (FlutterFlowTheme.of(context)
-                                                      .alternate !=
-                                                  null)
-                                              ? BorderSide(
-                                                  width: 2,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                )
-                                              : null,
-                                          activeColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primary,
-                                          checkColor:
-                                              FlutterFlowTheme.of(context).info,
-                                        ),
-                                      ),
                                     ].divide(SizedBox(width: 16.0)),
                                   ),
                                 ),

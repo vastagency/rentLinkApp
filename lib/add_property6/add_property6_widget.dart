@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/property_listed_successfully_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1644,77 +1645,84 @@ class _AddProperty6WidgetState extends State<AddProperty6Widget> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await PropertiesTable().insert({
-                            'landlord_id': currentUserUid,
-                            'title': FFAppState().newPropertyTitle,
-                            'property_type': FFAppState().newPropertyType,
-                            'bedrooms': FFAppState().newPropertyBedrooms,
-                            'bathrooms': FFAppState().newPropertyBathrooms,
-                            'furnishing': FFAppState().newPropertyFurnishing,
-                            'address': FFAppState().newPropertyAddress,
-                            'state': FFAppState().newPropertyState,
-                            'city': FFAppState().newPropertyCity,
-                            'nearby_landmark': FFAppState().newPropertyLandmark,
-                            'rent_amount': FFAppState().newPropertyRentAmount,
-                            'rent_period': FFAppState().newPropertyRentPeriod,
-                            'service_charge':
-                                FFAppState().newPropertyServiceCharge,
-                            'agency_fee': FFAppState().newPropertyAgencyFee,
-                            'amenities': FFAppState().newPropertyAmenities,
-                            'photos': FFAppState().newPropertyPhotos,
-                            'status': 'published',
-                            'is_available': true,
-                          });
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                'Property published successfully!',
-                                style: TextStyle(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                      Builder(
+                        builder: (context) => FFButtonWidget(
+                          onPressed: () async {
+                            await PropertiesTable().insert({
+                              'landlord_id': currentUserUid,
+                              'title': FFAppState().newPropertyTitle,
+                              'property_type': FFAppState().newPropertyType,
+                              'bedrooms': FFAppState().newPropertyBedrooms,
+                              'bathrooms': FFAppState().newPropertyBathrooms,
+                              'furnishing': FFAppState().newPropertyFurnishing,
+                              'address': FFAppState().newPropertyAddress,
+                              'state': FFAppState().newPropertyState,
+                              'city': FFAppState().newPropertyCity,
+                              'nearby_landmark':
+                                  FFAppState().newPropertyLandmark,
+                              'rent_amount': FFAppState().newPropertyRentAmount,
+                              'rent_period': FFAppState().newPropertyRentPeriod,
+                              'service_charge':
+                                  FFAppState().newPropertyServiceCharge,
+                              'agency_fee': FFAppState().newPropertyAgencyFee,
+                              'amenities': FFAppState().newPropertyAmenities,
+                              'photos': FFAppState().newPropertyPhotos,
+                              'status': 'published',
+                              'is_available': true,
+                            });
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Property published successfully!',
+                                  style: TextStyle(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
                                 ),
+                                duration: Duration(milliseconds: 4000),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
                               ),
-                              duration: Duration(milliseconds: 4000),
-                              backgroundColor:
-                                  FlutterFlowTheme.of(context).primary,
-                            ),
-                          );
-
-                          context.goNamed(
-                            HomeLandLordWidget.routeName,
-                            extra: <String, dynamic>{
-                              '__transition_info__': TransitionInfo(
-                                hasTransition: true,
-                                transitionType: PageTransitionType.rightToLeft,
-                              ),
-                            },
-                          );
-                        },
-                        text: 'Publish Property',
-                        options: FFButtonOptions(
-                          width: 128.0,
-                          height: 45.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 0.0),
-                          iconAlignment: IconAlignment.end,
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.montserrat(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .fontStyle,
+                            );
+                            await showDialog(
+                              context: context,
+                              builder: (dialogContext) {
+                                return Dialog(
+                                  elevation: 0,
+                                  insetPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  alignment: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      FocusScope.of(dialogContext).unfocus();
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                    },
+                                    child: Container(
+                                      height: 370.0,
+                                      width: 390.0,
+                                      child: PropertyListedSuccessfullyWidget(),
                                     ),
-                                    color: Colors.white,
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                          text: 'Publish Property',
+                          options: FFButtonOptions(
+                            width: 128.0,
+                            height: 45.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconAlignment: IconAlignment.end,
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  font: GoogleFonts.montserrat(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontWeight,
@@ -1722,8 +1730,19 @@ class _AddProperty6WidgetState extends State<AddProperty6Widget> {
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                          elevation: 0.0,
-                          borderRadius: BorderRadius.circular(24.0),
+                                  color: Colors.white,
+                                  fontSize: 12.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                            elevation: 0.0,
+                            borderRadius: BorderRadius.circular(24.0),
+                          ),
                         ),
                       ),
                       FFButtonWidget(

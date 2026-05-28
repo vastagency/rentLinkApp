@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'bottom_nav_model.dart';
@@ -50,32 +51,51 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.home_rounded,
-                  color: FlutterFlowTheme.of(context).primary,
-                  size: 24.0,
-                ),
-                Text(
-                  'Home',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                context.goNamed(
+                  HomeTenantWidget.routeName,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 0),
+                    ),
+                  },
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.home_rounded,
+                    color: FlutterFlowTheme.of(context).primary,
+                    size: 24.0,
+                  ),
+                  Text(
+                    'Home',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          color: FlutterFlowTheme.of(context).primary,
+                          fontSize: 10.0,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        color: FlutterFlowTheme.of(context).primary,
-                        fontSize: 10.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
             Column(
               mainAxisSize: MainAxisSize.max,
@@ -131,32 +151,50 @@ class _BottomNavWidgetState extends State<BottomNavWidget> {
                 ),
               ],
             ),
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.receipt_long,
-                  color: Color(0xFF64748B),
-                  size: 24.0,
-                ),
-                Text(
-                  'Bookings',
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.inter(
+            InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                context.pushNamed(
+                  BookingTenantWidget.routeName,
+                  extra: <String, dynamic>{
+                    '__transition_info__': TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.rightToLeft,
+                    ),
+                  },
+                );
+              },
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.receipt_long,
+                    color: Color(0xFF64748B),
+                    size: 24.0,
+                  ),
+                  Text(
+                    'Bookings',
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          font: GoogleFonts.inter(
+                            fontWeight: FontWeight.w600,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
+                          color: Color(0xFF64748B),
+                          fontSize: 10.0,
+                          letterSpacing: 0.0,
                           fontWeight: FontWeight.w600,
                           fontStyle:
                               FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
-                        color: Color(0xFF64748B),
-                        fontSize: 10.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w600,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                ),
-              ],
+                  ),
+                ],
+              ),
             ),
             Column(
               mainAxisSize: MainAxisSize.max,

@@ -323,20 +323,14 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                             .labelMedium
                                             .override(
                                               font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
+                                                fontWeight: FontWeight.normal,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .fontStyle,
                                               ),
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
+                                              fontWeight: FontWeight.normal,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -347,22 +341,16 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                             .labelMedium
                                             .override(
                                               font: GoogleFonts.poppins(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .fontWeight,
+                                                fontWeight: FontWeight.normal,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .fontStyle,
                                               ),
                                               color: Color(0xFF64748B),
-                                              fontSize: 12.0,
+                                              fontSize: 10.0,
                                               letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .fontWeight,
+                                              fontWeight: FontWeight.normal,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -372,6 +360,9 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                         focusedBorder: InputBorder.none,
                                         errorBorder: InputBorder.none,
                                         focusedErrorBorder: InputBorder.none,
+                                        contentPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 3.0, 0.0, 0.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -931,9 +922,8 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                                 child: Icon(
                                                                   Icons
                                                                       .favorite,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
+                                                                  color: Color(
+                                                                      0xFFFF0000),
                                                                   size: 24.0,
                                                                 ),
                                                               ),
@@ -995,7 +985,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                                           context)
                                                                       .primary,
                                                                   fontSize:
-                                                                      12.0,
+                                                                      14.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -1008,17 +998,12 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                                 ),
                                                       ),
                                                       TextSpan(
-                                                        text: valueOrDefault<
-                                                            String>(
-                                                          rowPropertiesRow
-                                                              .rentPeriod,
-                                                          '/year',
-                                                        ),
+                                                        text: ' /year',
                                                         style: TextStyle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primaryText,
-                                                          fontSize: 12.0,
+                                                          fontSize: 8.0,
                                                         ),
                                                       )
                                                     ],
@@ -1963,7 +1948,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,
-                                                            fontSize: 12.0,
+                                                            fontSize: 14.0,
                                                             letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.w600,
@@ -1981,7 +1966,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
-                                                        fontSize: 12.0,
+                                                        fontSize: 10.0,
                                                       ),
                                                     )
                                                   ],
@@ -2580,7 +2565,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(8.0, 8.0,
+                                                            .fromSTEB(0.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Row(
                                                       mainAxisSize:
@@ -2670,7 +2655,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  8.0,
+                                                                  0.0,
                                                                   8.0,
                                                                   0.0,
                                                                   0.0),
@@ -2680,6 +2665,9 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                         mainAxisAlignment:
                                                             MainAxisAlignment
                                                                 .spaceBetween,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .end,
                                                         children: [
                                                           RichText(
                                                             textScaler:
@@ -2720,7 +2708,7 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         fontSize:
-                                                                            10.0,
+                                                                            14.0,
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight:
@@ -2778,7 +2766,8 @@ class _HomeTenantWidgetState extends State<HomeTenantWidget> {
                                                                       .fontStyle,
                                                                 ),
                                                           ),
-                                                        ],
+                                                        ].divide(SizedBox(
+                                                            width: 4.0)),
                                                       ),
                                                     ),
                                                   ),

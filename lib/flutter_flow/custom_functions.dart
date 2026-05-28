@@ -25,3 +25,11 @@ int stringToInt(String value) {
 double stringToDouble(String value) {
   return double.tryParse(value) ?? 0.0;
 }
+
+int incrementIndex(int index) {
+  return index + 1;
+}
+
+int decrementIndex(int index) {
+  return index - 1;
+}

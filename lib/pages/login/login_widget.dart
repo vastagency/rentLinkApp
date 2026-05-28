@@ -367,36 +367,65 @@ class _LoginWidgetState extends State<LoginWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Theme(
-                            data: ThemeData(
-                              checkboxTheme: CheckboxThemeData(
-                                visualDensity: VisualDensity.compact,
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(4.0),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Theme(
+                                data: ThemeData(
+                                  checkboxTheme: CheckboxThemeData(
+                                    visualDensity: VisualDensity.compact,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(4.0),
+                                    ),
+                                  ),
+                                  unselectedWidgetColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                ),
+                                child: Checkbox(
+                                  value: _model.checkboxValue ??= true,
+                                  onChanged: (newValue) async {
+                                    safeSetState(
+                                        () => _model.checkboxValue = newValue!);
+                                  },
+                                  side: (FlutterFlowTheme.of(context)
+                                              .alternate !=
+                                          null)
+                                      ? BorderSide(
+                                          width: 2,
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                        )
+                                      : null,
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  checkColor: FlutterFlowTheme.of(context).info,
                                 ),
                               ),
-                              unselectedWidgetColor:
-                                  FlutterFlowTheme.of(context).alternate,
-                            ),
-                            child: Checkbox(
-                              value: _model.checkboxValue ??= true,
-                              onChanged: (newValue) async {
-                                safeSetState(
-                                    () => _model.checkboxValue = newValue!);
-                              },
-                              side: (FlutterFlowTheme.of(context).alternate !=
-                                      null)
-                                  ? BorderSide(
-                                      width: 2,
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                    )
-                                  : null,
-                              activeColor: FlutterFlowTheme.of(context).primary,
-                              checkColor: FlutterFlowTheme.of(context).info,
-                            ),
+                              Text(
+                                'Remember Me',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.inter(
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                              ),
+                            ],
                           ),
                           InkWell(
                             splashColor: Colors.transparent,
@@ -656,10 +685,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                             shape: BoxShape.rectangle,
                           ),
                           alignment: AlignmentDirectional(0.0, 0.0),
-                          child: FaIcon(
-                            FontAwesomeIcons.google,
-                            color: Color(0xFFCA0A25),
-                            size: 24.0,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network(
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/250px-Google_Favicon_2025.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail',
+                              width: 24.0,
+                              height: 24.0,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                         Container(

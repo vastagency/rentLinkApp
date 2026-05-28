@@ -48,5 +48,9 @@ export '/add_property6/add_property6_widget.dart' show AddProperty6Widget;
 export '/navigate_page/navigate_page_widget.dart' show NavigatePageWidget;
 export '/message_chat_screen/message_chat_screen_widget.dart'
     show MessageChatScreenWidget;
+export '/landlord_property_details_page/landlord_property_details_page_widget.dart'
+    show LandlordPropertyDetailsPageWidget;
+export '/full_image_preview/full_image_preview_widget.dart'
+    show FullImagePreviewWidget;
 export '/pages/booking_landlord/booking_landlord_widget.dart'
     show BookingLandlordWidget;

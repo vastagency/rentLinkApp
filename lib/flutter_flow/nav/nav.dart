@@ -272,6 +272,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MessageChatScreenWidget(),
         ),
         FFRoute(
+          name: LandlordPropertyDetailsPageWidget.routeName,
+          path: LandlordPropertyDetailsPageWidget.routePath,
+          builder: (context, params) => LandlordPropertyDetailsPageWidget(
+            propertyId: params.getParam(
+              'propertyId',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: FullImagePreviewWidget.routeName,
+          path: FullImagePreviewWidget.routePath,
+          builder: (context, params) => FullImagePreviewWidget(
+            photos: params.getParam<String>(
+              'photos',
+              ParamType.String,
+              isList: true,
+            ),
+            currentIndex: params.getParam(
+              'currentIndex',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
           name: BookingLandlordWidget.routeName,
           path: BookingLandlordWidget.routePath,
           builder: (context, params) => BookingLandlordWidget(),

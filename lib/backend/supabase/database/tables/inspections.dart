@@ -26,13 +26,13 @@ class InspectionsRow extends SupabaseDataRow {
   String get landlordId => getField<String>('landlord_id')!;
   set landlordId(String value) => setField<String>('landlord_id', value);
 
-  DateTime get inspectionDate => getField<DateTime>('inspection_date')!;
-  set inspectionDate(DateTime value) =>
-      setField<DateTime>('inspection_date', value);
+  String get inspectionDate => getField<String>('inspection_date')!;
+  set inspectionDate(String value) =>
+      setField<String>('inspection_date', value);
 
-  PostgresTime get inspectionTime => getField<PostgresTime>('inspection_time')!;
-  set inspectionTime(PostgresTime value) =>
-      setField<PostgresTime>('inspection_time', value);
+  String get inspectionTime => getField<String>('inspection_time')!;
+  set inspectionTime(String value) =>
+      setField<String>('inspection_time', value);
 
   String? get note => getField<String>('note');
   set note(String? value) => setField<String>('note', value);

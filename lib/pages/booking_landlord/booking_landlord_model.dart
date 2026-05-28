@@ -1,5 +1,6 @@
 import '/components/bottom_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'booking_landlord_widget.dart' show BookingLandlordWidget;
 import 'package:flutter/material.dart';
 

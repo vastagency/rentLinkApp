@@ -121,7 +121,7 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -130,11 +130,11 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                           color: _model.selectedRole == 'tenant'
                               ? FlutterFlowTheme.of(context).primary
                               : Color(0xFF4E4E60),
-                          size: 40.0,
+                          size: 24.0,
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 12.0, 0.0, 12.0),
+                              8.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -164,7 +164,7 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                                     ),
                               ),
                               Text(
-                                'Browse properties, save for rent, and pay \nsecurely.',
+                                'Browse properties, save for rent, and \npay securely.',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -221,7 +221,7 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                   ),
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -230,11 +230,11 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                           color: _model.selectedRole == 'landlord'
                               ? FlutterFlowTheme.of(context).primary
                               : Color(0xFF5D5D6C),
-                          size: 40.0,
+                          size: 24.0,
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 12.0, 0.0, 12.0),
+                              8.0, 0.0, 0.0, 0.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -264,7 +264,7 @@ class _DecisionPageWidgetState extends State<DecisionPageWidget> {
                                     ),
                               ),
                               Text(
-                                'Post listings, manage tenants, and receive \npayments.',
+                                'Post listings, manage tenants, and r\neceive payments.',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
