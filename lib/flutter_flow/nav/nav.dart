@@ -163,14 +163,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => MessageDefaultWidget(),
         ),
         FFRoute(
-          name: MessageListScreenWidget.routeName,
-          path: MessageListScreenWidget.routePath,
-          builder: (context, params) => MessageListScreenWidget(),
+          name: MessageListScreenTenantWidget.routeName,
+          path: MessageListScreenTenantWidget.routePath,
+          builder: (context, params) => MessageListScreenTenantWidget(),
         ),
         FFRoute(
           name: ChatScreenWidget.routeName,
           path: ChatScreenWidget.routePath,
-          builder: (context, params) => ChatScreenWidget(),
+          builder: (context, params) => ChatScreenWidget(
+            conversationId: params.getParam(
+              'conversationId',
+              ParamType.String,
+            ),
+            otherUserId: params.getParam(
+              'otherUserId',
+              ParamType.String,
+            ),
+            propertyId: params.getParam(
+              'propertyId',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: BookInspectionsssssWidget.routeName,
@@ -267,11 +280,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => NavigatePageWidget(),
         ),
         FFRoute(
-          name: MessageChatScreenWidget.routeName,
-          path: MessageChatScreenWidget.routePath,
-          builder: (context, params) => MessageChatScreenWidget(),
-        ),
-        FFRoute(
           name: LandlordPropertyDetailsPageWidget.routeName,
           path: LandlordPropertyDetailsPageWidget.routePath,
           builder: (context, params) => LandlordPropertyDetailsPageWidget(
@@ -300,6 +308,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: BookingLandlordWidget.routeName,
           path: BookingLandlordWidget.routePath,
           builder: (context, params) => BookingLandlordWidget(),
+        ),
+        FFRoute(
+          name: MessageListScreenLandlordWidget.routeName,
+          path: MessageListScreenLandlordWidget.routePath,
+          builder: (context, params) => MessageListScreenLandlordWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -33,3 +33,7 @@ int incrementIndex(int index) {
 int decrementIndex(int index) {
   return index - 1;
 }
+
+bool isGreaterThanZero(int value) {
+  return value > 0;
+}

@@ -18,8 +18,8 @@ export '/pages/property_details_page/property_details_page_widget.dart'
     show PropertyDetailsPageWidget;
 export '/pages/message_default/message_default_widget.dart'
     show MessageDefaultWidget;
-export '/pages/message_list_screen/message_list_screen_widget.dart'
-    show MessageListScreenWidget;
+export '/pages/message_list_screen_tenant/message_list_screen_tenant_widget.dart'
+    show MessageListScreenTenantWidget;
 export '/pages/chat_screen/chat_screen_widget.dart' show ChatScreenWidget;
 export '/book_inspectionsssss/book_inspectionsssss_widget.dart'
     show BookInspectionsssssWidget;
@@ -46,11 +46,11 @@ export '/add_property4/add_property4_widget.dart' show AddProperty4Widget;
 export '/add_property5/add_property5_widget.dart' show AddProperty5Widget;
 export '/add_property6/add_property6_widget.dart' show AddProperty6Widget;
 export '/navigate_page/navigate_page_widget.dart' show NavigatePageWidget;
-export '/message_chat_screen/message_chat_screen_widget.dart'
-    show MessageChatScreenWidget;
 export '/landlord_property_details_page/landlord_property_details_page_widget.dart'
     show LandlordPropertyDetailsPageWidget;
 export '/full_image_preview/full_image_preview_widget.dart'
     show FullImagePreviewWidget;
 export '/pages/booking_landlord/booking_landlord_widget.dart'
     show BookingLandlordWidget;
+export '/pages/message_list_screen_landlord/message_list_screen_landlord_widget.dart'
+    show MessageListScreenLandlordWidget;

@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/index.dart';
 import 'package:flutter/material.dart';
@@ -897,29 +898,38 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                                           Expanded(
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                await ConversationsTable()
-                                                    .insert({
-                                                  'tenant_id': currentUserUid,
-                                                  'landlord_id':
-                                                      propertyDetailsPagePropertiesRow
-                                                          ?.landlordId,
-                                                  'property_id':
-                                                      widget.propertyId,
-                                                });
+                                                _model.conversationId =
+                                                    await actions
+                                                        .getOrCreateConversation(
+                                                  currentUserUid,
+                                                  propertyDetailsPagePropertiesRow!
+                                                      .landlordId,
+                                                  widget.propertyId!,
+                                                );
 
                                                 context.pushNamed(
-                                                  MessageChatScreenWidget
-                                                      .routeName,
-                                                  extra: <String, dynamic>{
-                                                    '__transition_info__':
-                                                        TransitionInfo(
-                                                      hasTransition: true,
-                                                      transitionType:
-                                                          PageTransitionType
-                                                              .rightToLeft,
+                                                  ChatScreenWidget.routeName,
+                                                  queryParameters: {
+                                                    'conversationId':
+                                                        serializeParam(
+                                                      _model.conversationId,
+                                                      ParamType.String,
                                                     ),
-                                                  },
+                                                    'otherUserId':
+                                                        serializeParam(
+                                                      propertyDetailsPagePropertiesRow
+                                                          .landlordId,
+                                                      ParamType.String,
+                                                    ),
+                                                    'propertyId':
+                                                        serializeParam(
+                                                      widget.propertyId,
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
                                                 );
+
+                                                safeSetState(() {});
                                               },
                                               text: 'Chat Landlord',
                                               icon: Icon(
@@ -1862,32 +1872,41 @@ class _PropertyDetailsPageWidgetState extends State<PropertyDetailsPageWidget> {
                                                   Expanded(
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        await ConversationsTable()
-                                                            .insert({
-                                                          'tenant_id':
-                                                              currentUserUid,
-                                                          'landlord_id':
-                                                              propertyDetailsPagePropertiesRow
-                                                                  ?.landlordId,
-                                                          'property_id': widget
-                                                              .propertyId,
-                                                        });
+                                                        _model.conversationIdCopy =
+                                                            await actions
+                                                                .getOrCreateConversation(
+                                                          currentUserUid,
+                                                          propertyDetailsPagePropertiesRow!
+                                                              .landlordId,
+                                                          widget.propertyId!,
+                                                        );
 
                                                         context.pushNamed(
-                                                          MessageChatScreenWidget
+                                                          ChatScreenWidget
                                                               .routeName,
-                                                          extra: <String,
-                                                              dynamic>{
-                                                            '__transition_info__':
-                                                                TransitionInfo(
-                                                              hasTransition:
-                                                                  true,
-                                                              transitionType:
-                                                                  PageTransitionType
-                                                                      .rightToLeft,
+                                                          queryParameters: {
+                                                            'conversationId':
+                                                                serializeParam(
+                                                              _model
+                                                                  .conversationId,
+                                                              ParamType.String,
                                                             ),
-                                                          },
+                                                            'otherUserId':
+                                                                serializeParam(
+                                                              propertyDetailsPagePropertiesRow
+                                                                  .landlordId,
+                                                              ParamType.String,
+                                                            ),
+                                                            'propertyId':
+                                                                serializeParam(
+                                                              widget
+                                                                  .propertyId,
+                                                              ParamType.String,
+                                                            ),
+                                                          }.withoutNulls,
                                                         );
+
+                                                        safeSetState(() {});
                                                       },
                                                       text: 'Chat Landlord',
                                                       icon: Icon(

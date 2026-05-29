@@ -9,6 +9,13 @@ class PropertyDetailsPageModel
 
   bool isSaved = false;
 
+  ///  State fields for stateful widgets in this page.
+
+  // Stores action output result for [Custom Action - getOrCreateConversation] action in Button widget.
+  String? conversationId;
+  // Stores action output result for [Custom Action - getOrCreateConversation] action in Button widget.
+  String? conversationIdCopy;
+
   @override
   void initState(BuildContext context) {}
 

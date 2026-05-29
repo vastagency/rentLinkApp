@@ -1,9 +1,12 @@
 import '/components/bottom_nav_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'message_list_screen_widget.dart' show MessageListScreenWidget;
+import '/index.dart';
+import 'message_list_screen_tenant_widget.dart'
+    show MessageListScreenTenantWidget;
 import 'package:flutter/material.dart';
 
-class MessageListScreenModel extends FlutterFlowModel<MessageListScreenWidget> {
+class MessageListScreenTenantModel
+    extends FlutterFlowModel<MessageListScreenTenantWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.

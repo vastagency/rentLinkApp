@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'message_chat_screen_widget.dart' show MessageChatScreenWidget;
+import 'bottom_nav_landlord_widget.dart' show BottomNavLandlordWidget;
 import 'package:flutter/material.dart';
 
-class MessageChatScreenModel extends FlutterFlowModel<MessageChatScreenWidget> {
+class BottomNavLandlordModel extends FlutterFlowModel<BottomNavLandlordWidget> {
   @override
   void initState(BuildContext context) {}
 

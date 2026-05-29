@@ -1,12 +1,18 @@
 import '/components/bottom_nav_landlord_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
-import 'home_land_lord_widget.dart' show HomeLandLordWidget;
+import 'message_list_screen_landlord_widget.dart'
+    show MessageListScreenLandlordWidget;
 import 'package:flutter/material.dart';
 
-class HomeLandLordModel extends FlutterFlowModel<HomeLandLordWidget> {
+class MessageListScreenLandlordModel
+    extends FlutterFlowModel<MessageListScreenLandlordWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Model for BottomNavLandlord component.
   late BottomNavLandlordModel bottomNavLandlordModel;
 
@@ -18,6 +24,9 @@ class HomeLandLordModel extends FlutterFlowModel<HomeLandLordWidget> {
 
   @override
   void dispose() {
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+
     bottomNavLandlordModel.dispose();
   }
 }
